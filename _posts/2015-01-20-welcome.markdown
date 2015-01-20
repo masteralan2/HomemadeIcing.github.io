@@ -2,7 +2,7 @@
 layout: post
 title:  "Welcome to my new website!"
 date:   2015-01-20 15:44:50
-categories: new website omg boss alan ng
+categories: personal
 ---
 Well, it seems that you stumbled on my website. Good on you =)
 
