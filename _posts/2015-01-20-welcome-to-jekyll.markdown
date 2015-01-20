@@ -1,25 +1,30 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Welcome to my new website!"
 date:   2015-01-20 15:44:50
-categories: jekyll update
+categories: new website omg boss alan ng
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+Well, it seems that you stumbled on my website. Good on you =)
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+Quick intro, I'm Alan Ng and currently a student at General Assembly. Currently 19 years old and just dropped out of a computer science degree at University of Technology, Sydney because I don't think I could stand studying for another 3 years when I could be in the IT/Programming field in 3 months at GA. I have a passion with ending poverty and hardware/software development. On the fence with religion but agree with most of morals and rules they establish. Usually either volunteering, programming or playing video games (mostly Halo and Counter Strike) in my spare time.
 
-Jekyll also offers powerful support for code snippets:
+My intention with the website is I could blog my experiences as a new Ruby on Rails developer coming out of Web Development Immersive 7 at General Assembly, Sydney. I'm currently up to Week 9 in my 12 week immersive course which involves working on:
+  - Ruby on Rails, which includes TDD and extensive use of APIs
+  - JavaScript, so far using Backbone.js (which includes Underscore.js) and jQuery. Soon we'll be learning node.js and React. I might focus on Angular and Ember in my spare time.
+  - Sinatra, a bare-bones framework for Ruby.
+  - and the usual HTML/CSS
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+Hopefully I could also document my experiences as I would soon trave through the world and love to share my experiences with other budding travellers. Maybe start a vlog here as well.
 
-Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll’s dedicated Help repository][jekyll-help].
+Here's the next few updates I would get started on soon:
+  - Add portfolio section of my website
+  - Add categories for both personal and professional blog posts
+  - Add Disqus
+  - Add some dedicated pages for tutorials
+  - Add Twitter feed so you viewers can follow me on Twitter
+  - Add GitHub integration for statistics and projects you can see
 
-[jekyll]:      http://jekyllrb.com
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-help]: https://github.com/jekyll/jekyll-help
+Well, I'm done with this first blog post so I'll end it with this note: Thanks for visiting and hopefully this website would be awesome!
+
+Committing and Pushing now.
+
