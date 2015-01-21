@@ -12,6 +12,6 @@ twitter_username: HomemadeIcing
 github_username:  HomemadeIcing
 
 # Build settings
-markdown: rdiscount
+markdown: redcarpet
 
 exclude: ['config.ru', 'Gemfile', 'Gemfile.lock', 'vendor']
