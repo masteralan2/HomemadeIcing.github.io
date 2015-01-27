@@ -11,6 +11,7 @@ url: "http://alan.ng" # the base hostname & protocol for your site
 twitter_username: HomemadeIcing
 github_username:  HomemadeIcing
 
+
 # Build settings
 markdown: redcarpet
 

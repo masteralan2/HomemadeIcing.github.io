@@ -5,9 +5,11 @@
     border-top: 5px solid $grey-color-dark;
     border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
+    width: 100%;
 
     // Positioning context for the mobile navigation icon
-    position: relative;
+    position: fixed;
+    background-color: white;
 }
 
 .site-title {
@@ -234,3 +236,32 @@
         }
     }
 }
+
+#banner{
+    padding-top: 10vh;
+    width: 100%;
+    height: 100vh;
+
+    #smiley-face{
+    position: center;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 10vh
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 5vh;
+    }
+}
+
+#intro {
+    width: 50vw;
+    float: left;
+}
+
+
+
+

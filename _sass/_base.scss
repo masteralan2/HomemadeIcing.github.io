@@ -154,8 +154,7 @@ pre {
  * Wrapper
  */
 .wrapper {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+    max-width: 80%;
     margin-right: auto;
     margin-left: auto;
     padding-right: $spacing-unit;
@@ -205,4 +204,8 @@ pre {
 
 .twitter-box {
     float: right;
+}
+
+.post {
+    padding-top: 10vh;
 }
