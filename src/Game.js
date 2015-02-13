@@ -58,7 +58,7 @@ Candy.Game.prototype = {
 		// update timer every frame
 		this._spawnCandyTimer += this.time.elapsed;
 		// if spawn timer reach one second (1000 miliseconds)
-		if(this._spawnCandyTimer > 500) {
+		if(this._spawnCandyTimer > 400) {
 			// reset it
 			this._spawnCandyTimer = 0;
 			// and spawn new candy
