@@ -58,7 +58,7 @@ Candy.Game.prototype = {
 		// update timer every frame
 		this._spawnCandyTimer += this.time.elapsed;
 		// if spawn timer reach one second (1000 miliseconds)
-		if(this._spawnCandyTimer > 1000) {
+		if(this._spawnCandyTimer > 500) {
 			// reset it
 			this._spawnCandyTimer = 0;
 			// and spawn new candy
@@ -108,6 +108,7 @@ Candy.item = {
 		// set the random rotation value
 		candy.rotateMe = (Math.random()*4)-2;
 		// add candy to the group
+		game._candyGroup.add(candy);
 		game._candyGroup.add(candy);
 	},
 	clickCandy: function(candy){
