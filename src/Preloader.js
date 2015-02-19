@@ -15,6 +15,7 @@ Candy.Preloader.prototype = {
 		this.load.image('game-over', 'img/gameover.png');
 		this.load.image('score-bg', 'img/score-bg.png');
 		this.load.image('button-pause', 'img/button-pause.png');
+		this.load.image('button-restart', 'img/button-restart.png');
 		// load spritesheets
 		this.load.spritesheet('candy', 'img/candy.png', 82, 98);
 		// this.load.spritesheet('monster-idle', 'img/monster-idle.png', 103, 131);

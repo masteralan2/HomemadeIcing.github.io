@@ -3,7 +3,9 @@ Candy.Game = function(game){
 	this._player = null;
 	this._candyGroup = null;
 	this._spawnCandyTimer = 0;
+	this._gameTimer = 0;
 	this._fontStyle = null;
+	this._intervals = 1000;
 	// define Candy variables to reuse them in Candy.item functions
 	Candy._scoreText = null;
 	Candy._score = 0;
@@ -20,7 +22,7 @@ Candy.Game.prototype = {
 		// this.add.sprite(-30, Candy.GAME_HEIGHT-160, 'floor');
 		this.add.sprite(10, 5, 'score-bg');
 		// add pause button
-		this.add.button(Candy.GAME_WIDTH-96-10, 5, 'button-pause', this.managePause, this);
+		this.add.button(Candy.GAME_WIDTH-96-10, 3, 'button-pause', this.managePause, this);
 		//currently adding restart button
 		// this.add.button(Candy.GAME_WIDTH-50-10, 5, 'button-restart', this.manage)
 		// set font style
@@ -50,19 +52,27 @@ Candy.Game.prototype = {
 		}, this);
 	},
 
-	// manageRestart: function() {
-	// 	//restart the game
-	// 	this.game.
-	// }
+	manageRestart: function() {
+		//restart the game
+		this.state.start('Game');
+	},
+
 	update: function(){
 		// update timer every frame
+		this._gameTimer += this.time.elapsed;
 		this._spawnCandyTimer += this.time.elapsed;
 		// if spawn timer reach one second (1000 miliseconds)
-		if(this._spawnCandyTimer > 400) {
+		if(this._spawnCandyTimer > this._intervals) {
 			// reset it
 			this._spawnCandyTimer = 0;
 			// and spawn new candy
-			Candy.item.spawnCandy(this);
+			if (this._intervals >= 250) {
+				Candy.item.spawnCandy(this);
+				this._intervals -= 10;
+			} else {
+				Candy.item.spawnCandy(this);
+				this._intervals = 250;
+			}
 		}
 		// loop through all candy on the screen
 		this._candyGroup.forEach(function(candy){
@@ -75,6 +85,7 @@ Candy.Game.prototype = {
 			this.add.sprite((Candy.GAME_WIDTH-594)/2, (Candy.GAME_HEIGHT-271)/2, 'game-over');
 			// pause the game
 			this.game.paused = true;
+			this.add.button((Candy.GAME_WIDTH-594)/2, (Candy.GAME_HEIGHT-271)/2, 'button-restart', this.manageRestart, this);
 		}
 	}
 };
@@ -108,7 +119,6 @@ Candy.item = {
 		// set the random rotation value
 		candy.rotateMe = (Math.random()*4)-2;
 		// add candy to the group
-		game._candyGroup.add(candy);
 		game._candyGroup.add(candy);
 	},
 	clickCandy: function(candy){
