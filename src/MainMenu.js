@@ -1,3 +1,13 @@
+FB.init({
+  appId: '340313659509218',
+  frictionlessRequests: true,
+  status: true,
+  version: 'v2.1'
+});
+
+FB.Event.subscribe('auth.authResponseChange', onAuthResponseChange);
+FB.Event.subscribe('auth.statusChange', onStatusChange);
+
 Candy.MainMenu = function(game){};
 Candy.MainMenu.prototype = {
 	create: function(){
