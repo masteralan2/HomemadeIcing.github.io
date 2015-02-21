@@ -9,6 +9,7 @@ Candy.Preloader.prototype = {
 	preload: function(){
 		// set background color and preload image
 		this.stage.backgroundColor = 'ffffff';
+		this.add.sprite(0, 0, 'preloaderBackground');
 		this.preloadBar = this.add.sprite((Candy.GAME_WIDTH - 289) / 2, (Candy.GAME_HEIGHT - 45 + 230) / 2, 'preloaderBar');
 		this.load.setPreloadSprite(this.preloadBar);
 		// load images
