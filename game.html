@@ -20,7 +20,7 @@
     <script>
     (function() {
         // initialize the framework
-        var game = new Phaser.Game(640, 960, Phaser.CANVAS, 'game');
+        var game = new Phaser.Game(640, 960, Phaser.AUTO, 'game');
         // add game states
         game.state.add('Boot', Candy.Boot);
         game.state.add('Preloader', Candy.Preloader);
