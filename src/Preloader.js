@@ -14,6 +14,7 @@ Candy.Preloader.prototype = {
 		this.load.setPreloadSprite(this.preloadBar);
 		// load images
 		this.load.image('background', 'img/background.png');
+		this.load.image('alan-cover', 'img/alan-cover.png');
 		this.load.image('title', 'img/title.png');
 		this.load.image('game-over', 'img/gameover.png');
 		this.load.image('score-bg', 'img/score-bg.png');

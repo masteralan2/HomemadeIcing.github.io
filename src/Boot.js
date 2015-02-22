@@ -13,7 +13,7 @@ Candy.Boot.prototype = {
 		// set scale options
 		this.input.maxPointers = 2;
 		this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
-		//if its not a desktop and isn't in landscape on mobile
+		//if its not a desktop and isn't in landscape on firefoxOS
 		// if (!this.game.device.desktop && !this.isFFOS) {
 		// 	this.scale.forceOrientation(true, false, 'screenRotate')
 		// }
