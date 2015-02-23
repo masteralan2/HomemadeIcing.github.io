@@ -9626,7 +9626,6 @@ Candy.Preloader.prototype = {
     this.load.image('explosion', 'img/explosion.png');
     this.load.image('score-bg', 'img/score-bg.png');
     this.load.image('monster-sleeps', 'img/monster-sleeps.png');
-    this.load.image('screen-story', 'img/screen-story.png');
     this.load.image('screen-overlay', 'img/screen-overlay.png');
     this.load.image('screen-achievements', 'img/screen-achievements.png');
     this.load.image('screen-completed', 'img/screen-completed.png');
@@ -9635,10 +9634,6 @@ Candy.Preloader.prototype = {
     this.load.image('text-highscore', 'img/text-highscore.png');
     this.load.image('text-overall', 'img/text-overall.png');
     this.load.image('text-newbestscore', 'img/text-newbestscore.png');
-    this.load.image('howto-bomb', 'img/howto-bomb.png');
-    this.load.image('howto-monster', 'img/howto-monster.png');
-    this.load.image('howto-path', 'img/howto-path.png');
-    this.load.image('howto-super', 'img/howto-super.png');
     this.load.image('message-newcandy', 'img/message-newcandy.png');
     this.load.image('candy-red', 'img/candy-red.png');
     this.load.image('candy-marshmallow', 'img/candy-marshmallow.png');
@@ -9673,7 +9668,7 @@ Candy.Preloader.prototype = {
     this.load.text('font-svg', 'fonts/comicbook.svg');
     this.load.text('font-woff', 'fonts/comicbook.woff');
     this.load.spritesheet('button-start', 'img/button-start.png', 401, 143);
-    this.load.spritesheet('button-moregames', 'img/button-moregames.png', 358, 133);
+    this.load.spritesheet('button-alanswebsite', 'img/button-alans-website.png', 358, 133);
     this.load.spritesheet('button-continue', 'img/button-continue.png', 358, 133);
     this.load.spritesheet('button-back', 'img/button-back.png', 358, 133);
     this.load.spritesheet('button-restart', 'img/button-restart.png', 363, 131);
@@ -9728,7 +9723,7 @@ Candy.MainMenu.prototype = {
     totalscoreText.x = (213 + 75 - totalscoreText.width) * 0.5;
     var title = this.add.sprite(Candy.GAME_WIDTH - 395 - 5, 140, 'title');
     this.buttonStart = this.add.button(Candy.GAME_WIDTH, Candy.GAME_HEIGHT - 143 - 10, 'button-start', this.clickStart, this, 1, 0, 2);
-    this.buttonMoreGames = this.add.button(Candy.GAME_WIDTH - 300, Candy.GAME_HEIGHT - 440, 'button-moregames', this.clickMoreGames, this, 1, 0, 2);
+    this.buttonMoreGames = this.add.button(Candy.GAME_WIDTH - 300, Candy.GAME_HEIGHT - 440, 'button-alanswebsite', this.clickAlansWebsite, this, 1, 0, 2);
     this.buttonAchievements = this.add.button(Candy.GAME_WIDTH, Candy.GAME_HEIGHT - 143 - 130 - 20, 'button-achievements', this.clickAchievements, this, 1, 0, 2);
 
     this.buttonAudio = this.add.button(Candy.GAME_WIDTH - 111 - 10, -96, 'button-audio', this.manageAudio, this, 1, 0, 2);
@@ -9811,10 +9806,7 @@ Candy.MainMenu.prototype = {
     if (this.audioStatus) {
       this.soundClick.play()
     }
-    this.audioStatus = false;
-    this.audioOffset = 0;
-    this.soundMusic.stop();
-    this.state.start('StoryHowto')
+    this.state.start('Game')
   },
   clickAchievements: function() {
     if (this.audioStatus) {
@@ -9823,11 +9815,11 @@ Candy.MainMenu.prototype = {
     }
     this.state.start('Achievements')
   },
-  clickMoreGames: function() {
+  clickAlansWebsite: function() {
     if (this.audioStatus) {
       this.soundClick.play()
     }
-    window.top.open('http://enclavegames.com/games.html')
+    window.top.open('http://homemadeicing.github.io')
   }
 };
 Candy.Achievements = function(game) {};
@@ -9905,75 +9897,7 @@ Candy.Achievements.prototype = {
     this.add.text(50 * 2, 428 * 2, '100 000', text.t32px)
   }
 };
-Candy.StoryHowto = function(game) {};
-Candy.StoryHowto.prototype = {
-  create: function() {
-    this.fontText = {
-      font: "48px ComicBook",
-      fill: "#FFCC00",
-      stroke: "#642D07",
-      strokeThickness: 12
-    };
-    this.showStory()
-  },
-  showStory: function() {
-    this.audioStatus = storageAPI.get('audio') || false;
-    this.soundClick = this.add.audio('audio-click');
-    this.add.sprite(0, 0, 'background');
-    this.add.sprite(0, 0, 'screen-story');
-    this.add.text(10, 10, "Evil King kidnapped", this.fontText);
-    this.add.text(320, 60, "your love!", this.fontText);
-    this.add.text(10, 360, "Collect", this.fontText);
-    this.add.text(10, 410, "enough candy", this.fontText);
-    this.add.text(10, 460, "to get her back!", this.fontText);
-    this.buttonContinue = this.add.button(-358, Candy.GAME_HEIGHT - 133 - 10, 'button-continue', this.showHowto, this, 1, 0, 2);
-    this.buttonContinue.input.useHandCursor = true;
-    this.add.tween(this.buttonContinue).to({
-      x: Candy.GAME_WIDTH - 358 - 10
-    }, 300, Phaser.Easing.Exponential.Out, true, 0, false)
-  },
-  showHowto: function() {
-    if (this.audioStatus) {
-      this.soundClick.play()
-    }
-    this.add.sprite(0, 0, 'background');
-    this.add.sprite(420, 320, 'howto-bomb');
-    var monster = this.add.sprite(-20, Candy.GAME_HEIGHT - 262 - 5, 'howto-monster');
-    monster.scale = {
-      x: 2,
-      y: 2
-    };
-    this.add.sprite(20, 80, 'howto-path');
-    this.add.sprite(320, 586, 'life-full');
-    this.add.sprite(410, 586, 'life-full');
-    this.add.sprite(500, 586, 'life-empty');
-    this.add.text(120, 10, "HOW TO PLAY", {
-      font: "52px ComicBook",
-      fill: "#FFCC00",
-      stroke: "#642D07",
-      strokeThickness: 12
-    });
-    this.add.text(160, 190, "Tap the candy", this.fontText);
-    this.add.text(240, 240, "to collect it!", this.fontText);
-    this.add.text(60, 350, "Watch out", this.fontText);
-    this.add.text(60, 400, "for the bomb!", this.fontText);
-    this.add.text(20, 510, "If the candy fell off", this.fontText);
-    this.add.text(20, 560, "the screen", this.fontText);
-    this.add.text(260, 670, "you will lose", this.fontText);
-    this.add.text(380, 720, "one life!", this.fontText);
-    this.buttonContinue = this.add.button(-358, Candy.GAME_HEIGHT - 133 - 10, 'button-continue', this.startGame, this, 1, 0, 2);
-    this.buttonContinue.input.useHandCursor = true;
-    this.add.tween(this.buttonContinue).to({
-      x: Candy.GAME_WIDTH - 358 - 10
-    }, 300, Phaser.Easing.Exponential.Out, true, 0, false)
-  },
-  startGame: function() {
-    if (this.audioStatus) {
-      this.soundClick.play()
-    }
-    this.state.start('Game')
-  }
-};
+
 Candy.Game = function(game) {
   player = null;
   playerStatus = null;
