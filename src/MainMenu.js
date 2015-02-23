@@ -41,9 +41,16 @@ Candy.MainMenu.prototype = {
     var totalscore = storageAPI.get('totalscore');
     totalscoreText.setText('' + totalscore);
     this.initAudio();
+    highscoreText.alpha = 0;
+    highscoreTxt.alpha = 0;
+    highscoreBg.alpha = 0;
+    totalscoreText.alpha = 0;
+    overallTxt.alpha = 0;
+    overallBg.alpha = 0;
+    for (var i = 0; i < 1; i++) {
     this.add.tween(this.buttonStart).to({
       x: Candy.GAME_WIDTH - 401 - 10
-    }, 1000, Phaser.Easing.Exponential.Out, true, 0, false);
+    }, 1000, Phaser.Easing.Exponential.Out, true, 0, 0, false);
     this.add.tween(this.buttonAchievements).to({
       x: Candy.GAME_WIDTH - 363 - 10
     }, 1000, Phaser.Easing.Exponential.Out, true, 100, false);
@@ -53,12 +60,7 @@ Candy.MainMenu.prototype = {
     this.add.tween(this.buttonAudio).to({
       y: 10
     }, 1000, Phaser.Easing.Bounce.Out, true, 100, false);
-    highscoreText.alpha = 0;
-    highscoreTxt.alpha = 0;
-    highscoreBg.alpha = 0;
-    totalscoreText.alpha = 0;
-    overallTxt.alpha = 0;
-    overallBg.alpha = 0;
+
     this.add.tween(highscoreText).to({
       alpha: 1
     }, 500, Phaser.Easing.Linear.None, true, 0, 0, false);
@@ -77,6 +79,7 @@ Candy.MainMenu.prototype = {
     this.add.tween(overallBg).to({
       alpha: 1
     }, 500, Phaser.Easing.Linear.None, true, 0, 0, false)
+    };
   },
   initAudio: function() {
     storageAPI.initUnset('audio', false);
