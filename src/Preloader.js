@@ -1,9 +1,9 @@
 Candy.Preloader = function(game){
 	// define width and height of the game
-	Candy.GAME_WIDTH = 640;
-	Candy.GAME_HEIGHT = 960;
 	this.background = null;
 	this.preloadBar = null;
+	Candy.GAME_WIDTH = 640;
+	Candy.GAME_HEIGHT = 960;
 };
 Candy.Preloader.prototype = {
 	preload: function(){
@@ -20,6 +20,7 @@ Candy.Preloader.prototype = {
 		this.load.image('score-bg', 'img/score-bg.png');
 		this.load.image('button-pause', 'img/button-pause.png');
 		this.load.image('button-restart', 'img/button-restart.png');
+		this.load.spritesheet('button-alans-website', 'img/button-alans-website.png', 358, 133);
 		// load spritesheets
 		this.load.spritesheet('candy', 'img/candy.png', 82, 98);
 		// this.load.spritesheet('monster-idle', 'img/monster-idle.png', 103, 131);
