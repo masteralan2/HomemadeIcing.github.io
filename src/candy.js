@@ -9684,10 +9684,10 @@ Candy.Preloader.prototype = {
     this.load.spritesheet('monster-cape-eats', 'img/monster-cape-eats.png', 148, 136);
     this.load.spritesheet('monster-king-idle', 'img/monster-king-idle.png', 148, 144);
     this.load.spritesheet('monster-king-eats', 'img/monster-king-eats.png', 148, 136);
-    this.load.audio('audio-click', ['audio/click.ogg', 'audio/click.mp3']);
-    this.load.audio('audio-eating', ['audio/eating.ogg', 'audio/eating.mp3']);
-    this.load.audio('audio-music', ['audio/music.ogg', 'audio/music.mp3']);
-    this.load.audio('audio-newlevel', ['audio/newlevel.ogg', 'audio/newlevel.mp3'])
+    this.load.audio('audio-click', 'audio/click.mp3');
+    this.load.audio('audio-eating', 'audio/eating.mp3');
+    this.load.audio('audio-music', 'audio/music.mp3');
+    this.load.audio('audio-newlevel', 'audio/newlevel.mp3')
   },
   create: function() {
     this.state.start('MainMenu')
