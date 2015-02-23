@@ -1,6 +1,4 @@
 Candy.MainMenu = function(game) {
-  blackmoonButton = null;
-  enclaveButton = null;
   audioStatus = false;
   audioOffset = 0;
   soundClick = null;
